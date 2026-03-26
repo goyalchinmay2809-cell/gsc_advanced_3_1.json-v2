@@ -1,0 +1,116 @@
+{
+  "input": {
+    "workflow": {
+      "483": {
+        "inputs": {
+          "image": "close_up_portrait.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "1185": {
+        "inputs": {
+          "image": "product_photo.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "1235": {
+        "inputs": {
+          "text": "Character with product",
+          "images": [
+            "1236",
+            0
+          ],
+          "aspect_ratio": [
+            "1241",
+            0
+          ]
+        },
+        "class_type": "GeminiNanoBanana2",
+        "_meta": {
+          "title": "GeminiNanoBanana2"
+        }
+      },
+      "1236": {
+        "inputs": {
+          "images.image0": [
+            "483",
+            0
+          ],
+          "images.image1": [
+            "1185",
+            0
+          ]
+        },
+        "class_type": "BatchImagesNode",
+        "_meta": {
+          "title": "BatchImagesNode"
+        }
+      },
+      "1237": {
+        "inputs": {
+          "filename": "video/gsc_advanced_1",
+          "video": [
+            "1239",
+            0
+          ]
+        },
+        "class_type": "SaveVideo",
+        "_meta": {
+          "title": "SaveVideo"
+        }
+      },
+      "1239": {
+        "inputs": {
+          "text": "kling-v3-omni",
+          "reference_images": [
+            "1244",
+            0
+          ],
+          "aspect_ratio": [
+            "1241",
+            0
+          ]
+        },
+        "class_type": "KlingOmniProImageToVideoNode",
+        "_meta": {
+          "title": "KlingOmniProImageToVideoNode"
+        }
+      },
+      "1242": {
+        "inputs": {
+          "filename_prefix": "gsc_advanced_1",
+          "images": [
+            "1235",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "1244": {
+        "inputs": {
+          "images.image0": [
+            "1235",
+            0
+          ],
+          "images.image1": [
+            "1185",
+            0
+          ]
+        },
+        "class_type": "BatchImagesNode",
+        "_meta": {
+          "title": "BatchImagesNode"
+        }
+      }
+    }
+  }
+}
